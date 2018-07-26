@@ -1,0 +1,99 @@
+table{
+	&.tableReport-adn{
+		width: 100%;
+		font-size: 14px;
+		thead{
+			background: #B1D0E6;
+			tr{
+				th{
+					color:#1B365D;
+					text-transform: capitalize;
+					font-weight: bold;
+					text-align: left;
+					padding: 10px;
+    				font-size: 17px;
+					&.h-right-money{
+						text-align: right;
+					}
+				}
+			}
+		}
+		tbody{
+			tr{
+				border-bottom: 1px solid #EDF6FC;
+				padding: 10px;
+				td{
+					padding: 0px 15px 0px 15px;
+					&.right-money{
+						text-align: right;
+					}
+					h3{
+						&.title-group{
+						    color: #005CA9 !important;
+    						font-size: 17px !important;
+    						font-weight: bold !important;
+   							padding: 11px 0 10px 0!important;
+   							margin: 0 !important;
+						}
+					}
+					table{
+						width: 100%;
+						font-size: 14px;
+						tbody{
+							tr{
+								border-bottom: 1px solid #EDF6FC;
+								padding: 10px;
+								td{
+									&.right-money{
+										text-align: right;
+									}
+									h3{
+										&.title-group{
+											color: #487AD4 !important;
+											font-size: 17px !important;
+											font-weight: bold !important;
+											   padding: 11px 0 10px 0!important;
+											   margin: 0 !important;
+										}
+									}
+
+								}
+							}
+						}
+					}
+				}
+					&.txt-sum{
+						font-weight: bold;
+    					text-align: right;
+    					border-bottom: 2px solid #bec3c6;
+						.sum-string{
+							text-align: left;
+						}
+
+					}
+					&.princial-acoount{
+						font-weight: bold;
+						color: #005CA9 !important;
+					}
+				}
+			}
+			tfoot{
+				tr{
+					td{
+						&.right-money{
+							text-align: right;
+						}
+
+					}
+					&.txt-sum{
+						font-weight: bold;
+    					text-align: right;
+    					border-bottom: 2px solid #bec3c6;
+						.sum-string{
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+}
