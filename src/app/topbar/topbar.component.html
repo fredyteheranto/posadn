@@ -1,14 +1,34 @@
-<div class="app-topbar">
-  <div class="search-icon">
-    <a>
-      <img src="assets/images/logo_menu_white.png" alt="ADN">
-    </a>
-  </div>
-  <div class="topbar">
-    <div class="search">
-      <div class="search-box">
-        <input type="text" name="searchStr" placeholder="Buscar opciones">
+<block-ui>
+  <div class="app-topbar">
+    <div class="search-icon">
+      <a>
+        <img src="assets/images/logo_menu_white.png" alt="ADN">
+      </a>
+    </div>
+    <div class="topbar">
+      <div class="search">
+        <div class="search-box">
+          <input type="text" name="searchStr" placeholder="Buscar opciones">
+        </div>
+      </div>
+      <div class="datatable-buttons">
+        <button class="ui-button ui-button-secondary red" label="block" (click)="toggleBlocking()">Bloquear Terminal</button>
       </div>
     </div>
   </div>
-</div>
+  <div class="osx-login" *ngIf="activo" style="
+  z-index: 300000;
+">
+    <div class="avatar"></div>
+    <p class="name">Frank Ruiz</p>
+    <span *ngIf="password != undefined && password != '12345' " style="color: red;">Contraseña incorrecta</span>
+    <input type="password" class="password" [(ngModel)]="password" name="password" placeholder="Contraseña" />
+    <button class="ui-button password" style="
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 8px;
+    font-size: 15px;
+" (click)="desactivar()" [disabled]="password == undefined || password != '12345' " >Desbloquear</button>
+  </div>
+</block-ui>

@@ -34,7 +34,7 @@
                 <div class="datatable-buttons">
                   <button pButton class="ui-button pds" label="Buscar">Buscar</button>
                   <button pButton class="ui-button pds" label="Buscar">Buscar</button>
-                  <button pButton class="ui-button pds" label="Convenio">Convenio</button>
+                  <button pButton (click)="toggleBlocking()" class="ui-button pds" label="Convenio">Convenio</button>
                 </div>
               </div>
             </div>
@@ -43,39 +43,22 @@
                 <form class="row">
                   <div class="display">
                     <label for="number">Leer producto</label>
-                    <input *ngIf="!numberT"
-                    class="ui-input-number"
-                    matInput
-                    matKeyboard
-                    placeholder="From detected locale ({{ locale }})"
-                    name="sushi"
-                    [(ngModel)]="testModelValue"
-                    (enterClick)="submitForm(form)"
-                >
-                <input *ngIf="numberT"
-                #testSimpleValue
-                class="ui-input-number"
-                type="number"
-                matInput
-                placeholder="Swiss bank combination lock"
-                name="safe"
-                [matKeyboard]="'de-CH'"
-                [value]="1234567890"
-                (enterClick)="submitForm(form)"
-            >
-       
-                    
+                    <input *ngIf="!numberT" class="ui-input-number" matInput matKeyboard placeholder="From detected locale ({{ locale }})" name="sushi"
+                      [(ngModel)]="testModelValue" (enterClick)="submitForm(form)">
+                    <input *ngIf="numberT" #testSimpleValue class="ui-input-number" type="number" matInput placeholder="Swiss bank combination lock"
+                      name="safe" [matKeyboard]="'de-CH'" [value]="" (enterClick)="submitForm(form)">
+
                   </div>
-                  <div class="   display-button">
+                  <div class="display-button">
                     <button pButton class="ui-button ui-cl" label="+">+</button>
-                
                   </div>
                 </form>
               </div>
               <div class="row">
-                  <div><span class="bgkey" (click)="openKeyboard(locale)"
-                    aria-label="Open selected keyboard"></span><span (click)="openNUmber(locale)" class="tec"></span></div>
-                  
+                <div  >
+                  <span class="bgkey cols-xs-9" (click)="openKeyboard(locale)" aria-label="Open selected keyboard"></span>
+                  <span (click)="openNUmber(locale)" class="tec col-xs-3"></span>
+                </div>
               </div>
             </div>
           </div>

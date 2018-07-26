@@ -5,7 +5,11 @@
 @import "app/styles/sass/variables";
 @import "app/styles/sass/common";
 @import "assets/sass/theme/theme-indigo";
-
+.block-ui-wrapper{
+    cursor: not-allowed !important;
+    background: #407EC9 !important;
+}
+    
 * :focus {
     outline: none !important;
     -webkit-box-sizing: border-box;

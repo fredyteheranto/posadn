@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {  BlockUI, NgBlockUI } from 'ng-block-ui';
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
@@ -11,5 +11,20 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit() {
   }
+  @BlockUI() blockUI: NgBlockUI;
+    public activo: boolean = false;
+    private password;
+    toggleBlocking () {
+      this.activo = true;
+      this.blockUI.start()
+      
+
+   }
+   desactivar(){
+     if(this.password == '12345'){
+       this.activo = false;
+       this.blockUI.stop()
+     }
+   }
 
 }

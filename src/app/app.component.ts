@@ -3,7 +3,7 @@ import { FormControl, NgForm } from '@angular/forms';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 import { IKeyboardLayout, MAT_KEYBOARD_LAYOUTS, MatKeyboardComponent, MatKeyboardRef, MatKeyboardService } from '@ngx-material-keyboard/core';
-
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -15,10 +15,11 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  private _enterSubscription: Subscription;
-public numberT :boolean = false
-  private _keyboardRef: MatKeyboardRef<MatKeyboardComponent>;
 
+  private _enterSubscription: Subscription;
+  public numberT: boolean = false
+  private _keyboardRef: MatKeyboardRef<MatKeyboardComponent>;
+  @BlockUI() blockUI: NgBlockUI;
   private _submittedForms = new BehaviorSubject<{ control: string, value: string }[][]>([]);
 
   get submittedForms(): Observable<{ control: string, value: string }[][]> {
@@ -49,8 +50,9 @@ public numberT :boolean = false
   }
 
   constructor(private _keyboardService: MatKeyboardService,
-              @Inject(LOCALE_ID) public locale,
-              @Inject(MAT_KEYBOARD_LAYOUTS) private _layouts) {}
+    @Inject(LOCALE_ID) public locale,
+    @Inject(MAT_KEYBOARD_LAYOUTS) private _layouts) {
+  }
 
   ngOnInit() {
     this.defaultLocale = ` ${this.locale}`.slice(1);
@@ -80,7 +82,7 @@ public numberT :boolean = false
   }
 
   openKeyboard(locale = this.defaultLocale) {
-    
+
     this._keyboardRef = this._keyboardService.open(locale, {
       darkTheme: this.darkTheme,
       duration: this.duration,
@@ -112,8 +114,7 @@ public numberT :boolean = false
   }
   openNUmber(localeu) {
     this.closeCurrentKeyboard()
-    this.numberT  = true
+    this.numberT = true
     this.openKeyboard(localeu)
   }
-  
 }

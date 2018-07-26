@@ -14,7 +14,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BlockUIModule } from 'ng-block-ui';
 import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
+import { LoginComponent } from './topbar/login/login.component';
 
 
 const customLyouts: IKeyboardLayouts = {
@@ -45,10 +47,12 @@ const customLyouts: IKeyboardLayouts = {
     SidebarComponent,
     FooterComponent,
     TopbarComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    BlockUIModule.forRoot(),
     BrowserAnimationsModule,
     CommonModule,
     FormsModule,
@@ -60,6 +64,7 @@ const customLyouts: IKeyboardLayouts = {
     MatSlideToggleModule,
     MatTabsModule,
     MatKeyboardModule,
+
     
   ],
   providers: [ { provide: MAT_KEYBOARD_LAYOUTS, useValue: customLyouts }],
