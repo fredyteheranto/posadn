@@ -1,0 +1,67 @@
+@import "../libs/bourbon/bourbon";
+@import "../libs/neat/neat";
+@import "variables";
+
+.adn-row{
+    //@include outer-container(100%);
+    @include display(flex);
+    @include flex-direction(row);
+    @include align-items(center);
+}
+
+.adn-column, .adn-columns{
+    border: 1px solid red;
+    margin-right: $space-large;
+}
+
+.adn-column:last-child, .adn-columns:last-child {
+    @include omega();
+}
+
+.one{
+    @include flex(1);
+}
+
+.two{
+    @include flex-basis(16.6666666%);
+}
+
+.three{
+    @include flex(3);
+}
+
+.four{
+    @include flex-basis(33.3333333%);
+}
+
+.five{
+    @include flex(5);
+}
+
+.six{
+    @include flex-basis(50%);
+}
+
+.seven{
+    @include flex(7);
+}
+
+.eight{
+    @include flex(8);
+}
+
+.nine{
+    @include flex(9);
+}
+
+.ten{
+    @include flex(10);
+}
+
+.eleven{
+    @include flex(11);
+}
+
+.twelve{
+    @include flex(12);
+}

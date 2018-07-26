@@ -1,0 +1,68 @@
+@import "../styles/libs/bourbon/bourbon";
+@import "../styles/libs/neat/neat";
+@import "../styles/sass/variables";
+@import "../styles/sass/common";
+//sidebar-icon-people-dual
+
+.breadcrumbs-bar {
+    background-color: $color-breadcrumb;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    
+    ul {
+        @include display(flex);
+        @include flex-direction(row);
+        @include align-items(center);
+        height: 30px;
+
+        li {
+            background-image: url('/assets/images/breadcrumb_divider-2.png');
+            background-position: center right;
+            background-repeat: no-repeat;
+            padding-right: 1.5em;
+            margin-right: $space-small;
+            height: 16px;
+            line-height: 16px;
+            list-style: none;
+            @media only screen and (max-width: 1366px) {
+                height: 42px;
+                line-height: 42px;
+            }
+
+            a {
+                display: block;
+                color: $color-secondary;
+                text-decoration: none;
+                font-size: 1em;
+            }
+        }
+
+        li:first-child {
+            margin-left: $space-large;
+        }
+
+        li:last-child {
+            background-image: none;
+
+            a {
+                color: $color-main;
+                font-size: 0.9em;
+                cursor: default;
+            }
+        }
+
+        li.home {
+            a {
+                color: $color-secondary;
+                font-size: 1.2em;
+                line-height: 50px;
+
+                i {
+                    display: block;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import "variables";
+
+.spacer {
+    height: $space-normal;
+    clear: both;
+    float: none;
+}
+
+.spacer.small {
+    height: $space-small;
+}
+
+.spacer.large {
+    height: $space-large;
+}
+
+.spacer.big {
+    height: $space-big;
+}
+
+.spacer.huge {
+    height: $space-huge;
+}
+
+md-input-container{
+    width: 100%;
+}

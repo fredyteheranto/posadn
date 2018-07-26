@@ -1,0 +1,11 @@
+$primaryColor: #407EC9;
+$primaryDarkColor: darken($primaryColor, 27%);
+$primaryLightColor: lighten($primaryColor, 25%);
+$accentColor: $primaryColor;
+$accentDarkColor: $primaryDarkColor;
+$accentLightColor: $primaryLightColor;
+$accentTextColor: #ffffff;
+@import 'theme';
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';

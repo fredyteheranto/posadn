@@ -1,0 +1,246 @@
+@import "../libs/bourbon/bourbon";
+@import "../libs/neat/neat";
+@import "variables";
+@import "common";
+
+.welcome {
+    @include display(flex);
+    height: 882px !important;
+    width: calc(100% + 65px) !important;
+    background: white;
+    overflow: hidden;
+
+    .login-column {
+        @include display(flex);
+        @include flex(1);
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+
+        .logo-login {
+            margin-top: $space-big;
+
+            div:first-child {
+                text-align: center;
+
+                img {
+                    width: 58px;
+                    height: auto;
+                    margin: 0 auto;
+                }
+            }
+
+            div:last-child {
+                margin-top: $space-tiny;
+                font-size: 0.8em;
+                color: $color-gray;
+            }
+        }
+
+        .arrow-back {
+            @include display(flex);
+            @include align-items(center);
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            p {
+                font-size: 0.9em;
+            }
+
+            i {
+                display: block;
+                margin-right: 0;
+                font-size: 1em;
+            }
+        }
+
+        .login-box {
+            @include display(flex);
+            @include flex-direction(column);            
+
+            .company-logo-box {
+                height: 60px;
+                margin: 0 auto 7em auto;
+
+                img {
+                    height: 180%;
+                    width: auto;
+                }
+            }
+
+            md-inputfield {
+                margin: 1.5em 0;
+            }
+
+            md-inputfield.small-bottom-margin {
+                margin-bottom: 0.3em;
+            }
+
+            .md-errors-spacer {
+                display: none;
+            }
+
+            .change-company {
+                padding: 0.2em;
+                text-align: right;
+
+                a {
+                    font-size: 0.8em;
+                }
+            }
+
+            .forgot-password {
+                padding: 0.2em;
+                text-align: right;
+
+                a {
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+
+    .motivational-column {
+        @include flex(1.8);
+        background-color: #000;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+        > div {
+            //border: 1px solid red;
+        }
+
+        .motivational-text-box {
+            font-family: 'Poiret One', sans-serif;
+            margin: 3em 2em 1em 2em;
+            text-align: center;
+            font-size: 3em;
+            color: white;
+            font-weight: 600;
+            line-height: 1em;
+        }
+
+        .motivational-author {
+            font-family: 'Poiret One', sans-serif;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.8em;
+            color: white;
+        }
+    }
+
+    .motivational-column.motivational-bg0 {
+        background-image: url("/assets/images/motivational-0.jpg");
+    }
+
+    .motivational-column.motivational-bg1 {
+        background-image: url("/assets/images/motivational-1.jpg");
+    }
+
+    .motivational-column.motivational-bg2 {
+        background-image: url("/assets/images/motivational-2.jpg");
+    }
+
+    .motivational-column.motivational-bg3 {
+        background-image: url("/assets/images/motivational-3.jpg");
+    }
+
+    .motivational-column.motivational-bg4 {
+        background-image: url("/assets/images/motivational-4.jpg");
+    }
+
+    .motivational-column.motivational-bg5 {
+        background-image: url("/assets/images/motivational-5.jpg");
+    }
+
+    .motivational-column.motivational-bg6 {
+        background-image: url("/assets/images/motivational-6.jpg");
+    }
+
+    .motivational-column.motivational-bg7 {
+        background-image: url("/assets/images/motivational-7.jpg");
+    }
+
+    .motivational-column.motivational-bg8 {
+        background-image: url("/assets/images/motivational-8.jpg");
+    }
+
+    .motivational-column.motivational-bg9 {
+        background-image: url("/assets/images/motivational-8.jpg");
+    }
+}
+
+h3 {
+    color: darken($color-main, 20%);
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-bottom: $space-small;
+}
+
+.adn_field{
+    margin-bottom: 2em;
+}
+
+md-input, md-textarea{
+    display: block !important;
+}
+
+a {
+    color: $color-main;
+    text-decoration: underline;
+}
+
+a:visited{
+    color: $color-main;
+    text-decoration: underline;
+}
+
+button, .button {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+
+    border-bottom-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+
+    font-family: 'Roboto', sans-serif !important;
+    height: 60px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    outline: none;
+    text-decoration: none !important;
+}
+
+.modal-content {
+    border: none;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 18px;
+    color: #292b2c;
+    font-family: Courier New;
+    padding-top: 60px;
+    font-weight: bolder;
+    display: block;
+    margin-bottom: -70px !important;    
+}
+.flot{
+    float:right;
+    margin-right: 155px;
+    margin-top: 40px;
+}
+.flot button{
+    width: 198px !important;
+    font-family: 'Roboto', sans-serif !important;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    outline: none;
+}

@@ -1,20 +1,89 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<!---->
+<div class="content">
+  <app-topbar></app-topbar>
+  <div class="app-content">
+    <app-sidebar></app-sidebar>
+    <div class="content" style="top: -50px">
+      <app-breadcrumb></app-breadcrumb>
+      <div class="content-container" style="top:-5px">
+        <h1>Clientes</h1>
+        <div class="content-box" style="position: relative; min-height: 590px;">
+          <div class="col-xs-44">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="datatable-buttons">
+                  <button pButton class="ui-button topbu" label="Facturar">Facturar</button>
+                  <button pButton class="ui-button ui-button-secundary" label="Devolución">Devolución</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="datatable-buttons">
+                  <button pButton class="ui-button" label="Vendedor">Vendedor</button>
+                  <button pButton class="ui-button" label="Cliente">Cliente</button>
+                  <button pButton class="ui-button" label="Documento en Espera">En Espera</button>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-9">
+                <div class="datatable-buttons">
+                  <button pButton class="ui-button pds" label="Buscar">Buscar</button>
+                  <button pButton class="ui-button pds" label="Buscar">Buscar</button>
+                  <button pButton class="ui-button pds" label="Convenio">Convenio</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-9">
+                <form class="row">
+                  <div class="display">
+                    <label for="number">Leer producto</label>
+                    <input *ngIf="!numberT"
+                    class="ui-input-number"
+                    matInput
+                    matKeyboard
+                    placeholder="From detected locale ({{ locale }})"
+                    name="sushi"
+                    [(ngModel)]="testModelValue"
+                    (enterClick)="submitForm(form)"
+                >
+                <input *ngIf="numberT"
+                #testSimpleValue
+                class="ui-input-number"
+                type="number"
+                matInput
+                placeholder="Swiss bank combination lock"
+                name="safe"
+                [matKeyboard]="'de-CH'"
+                [value]="1234567890"
+                (enterClick)="submitForm(form)"
+            >
+       
+                    
+                  </div>
+                  <div class="   display-button">
+                    <button pButton class="ui-button ui-cl" label="+">+</button>
+                
+                  </div>
+                </form>
+              </div>
+              <div class="row">
+                  <div><span class="bgkey" (click)="openKeyboard(locale)"
+                    aria-label="Open selected keyboard"></span><span (click)="openNUmber('num',locale)" class="tec"></span></div>
+                  
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-88">
+            <img src="/assets/images/factura.png" width="261" height="535" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
